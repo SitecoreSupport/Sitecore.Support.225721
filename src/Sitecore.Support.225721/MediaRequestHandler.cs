@@ -24,6 +24,7 @@ namespace Sitecore.Support.Resources.Media
       cache.SetLastModified(dateTime);
       cache.SetETag(media.MediaData.MediaId);
       cache.SetCacheability(Settings.MediaResponse.Cacheability);
+      //Doesn't apply max-age in preview
       if (!Context.PageMode.IsPreview)
       {
         TimeSpan timeSpan = Settings.MediaResponse.MaxAge;

@@ -1,9 +1,8 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{BFAD9340-7351-4B1E-9C04-B685E408B89B}") = "Sitecore.Support.225721", "Sitecore.Support.225721\Sitecore.Support.225721.csproj", "{0D94B510-3C45-47B3-A7EA-B7C9E1191BBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Support.225721", "Sitecore.Support.225721\Sitecore.Support.225721.csproj", "{0D94B510-3C45-47B3-A7EA-B7C9E1191BBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +10,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0D94B510-3C45-47B3-A7EA-B7C9E1191BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D94B510-3C45-47B3-A7EA-B7C9E1191BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D94B510-3C45-47B3-A7EA-B7C9E1191BBD}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{0D94B510-3C45-47B3-A7EA-B7C9E1191BBD}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{0D94B510-3C45-47B3-A7EA-B7C9E1191BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D94B510-3C45-47B3-A7EA-B7C9E1191BBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A578C6AD-88AB-4305-98AD-6D89BDD1A106}
 	EndGlobalSection
 EndGlobal
