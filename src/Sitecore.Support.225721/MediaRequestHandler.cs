@@ -23,20 +23,25 @@ namespace Sitecore.Support.Resources.Media
       HttpCachePolicy cache = context.Response.Cache;
       cache.SetLastModified(dateTime);
       cache.SetETag(media.MediaData.MediaId);
-      cache.SetCacheability(Settings.MediaResponse.Cacheability);
-      //Doesn't apply max-age in preview
-      if (!Context.PageMode.IsPreview)
+
+      if (Context.PageMode.IsPreview)
       {
-        TimeSpan timeSpan = Settings.MediaResponse.MaxAge;
-        if (timeSpan > TimeSpan.Zero)
+        cache.SetCacheability(HttpCacheability.NoCache);
+      }
+      else
+      {
+        cache.SetCacheability(Settings.MediaResponse.Cacheability);
+      }
+
+      TimeSpan timeSpan = Settings.MediaResponse.MaxAge;
+      if (timeSpan > TimeSpan.Zero)
+      {
+        if (timeSpan > TimeSpan.FromDays(365.0))
         {
-          if (timeSpan > TimeSpan.FromDays(365.0))
-          {
-            timeSpan = TimeSpan.FromDays(365.0);
-          }
-          cache.SetMaxAge(timeSpan);
-          cache.SetExpires(DateTime.UtcNow + timeSpan);
+          timeSpan = TimeSpan.FromDays(365.0);
         }
+        cache.SetMaxAge(timeSpan);
+        cache.SetExpires(DateTime.UtcNow + timeSpan);
       }
 
       Tristate slidingExpiration = Settings.MediaResponse.SlidingExpiration;
